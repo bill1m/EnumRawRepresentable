@@ -20,6 +20,7 @@
 		A92A79CC25A3E55C004F3D72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A92A79CE25A3E55C004F3D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A92A79D525A3E5C8004F3D72 /* BrandText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandText.swift; sourceTree = "<group>"; };
+		A92A79D925A4FEFA004F3D72 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +37,7 @@
 		A92A79B925A3E559004F3D72 = {
 			isa = PBXGroup;
 			children = (
+				A92A79D925A4FEFA004F3D72 /* README.md */,
 				A92A79C425A3E559004F3D72 /* EnumRawRepresentable */,
 				A92A79C325A3E559004F3D72 /* Products */,
 			);

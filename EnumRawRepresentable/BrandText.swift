@@ -19,10 +19,19 @@ extension Color {
     }
 }
 
-enum BrandUse {
+enum BrandUse: CaseIterable, Identifiable {
+    var id: UUID {
+        return UUID()
+    }
     case primary
     case secondary
     case tertiary
+    var description: String {
+        return "\(self)"
+    }
+    var color: Color {
+        return self.rawValue
+    }
 }
 
 /// see: https://oleb.net/blog/2016/11/rawrepresentable/
@@ -39,6 +48,7 @@ extension BrandUse: RawRepresentable {
             case .brandTertiary:
                 self = .tertiary
             default:
+                assertionFailure("Don't init BrandUse with an unknown rawValue!")
                 return nil
         }
     }
@@ -57,11 +67,12 @@ extension BrandUse: RawRepresentable {
 
 struct BrandText_Previews: PreviewProvider {
     static var previews: some View {
-        VStack(spacing: 10) {
-            BrandText(title: "Primary", use: .primary).padding()
-            BrandText(title: "Secondary", use: .secondary).padding()
-            BrandText(title: "Tertiary", use: .tertiary)
-                .padding()
+        VStack() {
+            ForEach(BrandUse.allCases) {
+                use in
+                BrandText(title: use.description, usage: use)
+                
+            }.padding(10)
         }.previewLayout(.sizeThatFits)
         
     }
@@ -69,12 +80,14 @@ struct BrandText_Previews: PreviewProvider {
 
 struct BrandText: View {
     let title: String
-    let use: BrandUse
+    let usage: BrandUse
     var body: some View {
         Text(title)
             .fontWeight(.bold)
-            .foregroundColor(.primary)
+            .foregroundColor(Color.primary)
             .padding()
-            .background(use.rawValue)
+            .background(usage.color)
+            .clipShape(Rectangle())
+            .cornerRadius(15.0)
     }
 }

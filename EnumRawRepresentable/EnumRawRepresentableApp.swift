@@ -11,7 +11,10 @@ import SwiftUI
 struct EnumRawRepresentableApp: App {
     var body: some Scene {
         WindowGroup {
-            BrandText(title: "Test", use: .primary)
+            VStack {
+                BrandText_Previews.previews
+            }.background(Color.gray)
+            .cornerRadius(15.0)
         }
     }
 }
