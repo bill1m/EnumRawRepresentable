@@ -11,7 +11,7 @@ import SwiftUI
 struct EnumRawRepresentableApp: App {
     var body: some Scene {
         WindowGroup {
-            BrandText(title: "testing", use: .primary)
+            BrandText(title: "Test", use: .primary)
         }
     }
 }
